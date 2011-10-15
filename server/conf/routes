@@ -1,0 +1,22 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                                       Application.index
+
+# Ignore favicon requests
+GET     /favicon.ico                            404
+
+# Map static resources from the /app/public folder to the /public path
+GET     /public/                                staticDir:public
+
+# RESTful interface                                       
+GET     /rest/{controller}/?                              rest.{controller}.index
+GET     /rest/{controller}/{<[0-9]+>id}                   rest.{controller}.view
+POST    /rest/{controller}/?                              rest.{controller}.create
+PUT     /rest/{controller}/{<[0-9]+>id}                   rest.{controller}.edit
+DELETE  /rest/{controller}/{<[0-9]+>id}                   rest.{controller}.delete
+
+# Catch all
+*       /{controller}/{action}                  {controller}.{action}
