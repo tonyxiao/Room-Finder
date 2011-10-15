@@ -9,7 +9,7 @@ Ext.define('RF.model.Room', {
         {name: 'day_start',    type: 'string'},
         {name: 'day_end',      type: 'string'},
         {name: 'capacity',     type: 'int'},
-        'events'
+        'bookings'
     ],
     validations: [
         {type: 'presence',  field: 'first_name'},
@@ -17,6 +17,7 @@ Ext.define('RF.model.Room', {
         {type: 'presence',  field: 'device_id'},
         {type: 'presence',  field: 'phone_num'}
     ],
+//    hasMany: { model: 'RF.model.Booking', name: 'bookings' },
     proxy: {
         type: 'ajax',
         url : 'app/data/rooms.json'

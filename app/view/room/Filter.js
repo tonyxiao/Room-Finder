@@ -34,7 +34,7 @@ Ext.define('RF.view.room.Filter', {
                     itemId: 'building',
                     name: 'building',
                     xtype: 'combobox',
-                    fieldLabel: 'name',
+                    fieldLabel: 'Building Name',
                     store: [
                         'Friend',
                         'CS',
@@ -75,6 +75,7 @@ Ext.define('RF.view.room.Filter', {
                     name: 'from_date',
                     xtype: 'datefield',
                     format: 'Y-m-d',
+                    value: '2011-10-15',
                     validator: function(val) {
                         return !Ext.isEmpty(val);
                     }
@@ -82,17 +83,20 @@ Ext.define('RF.view.room.Filter', {
                     fieldLabel: 'From Time',
                     name: 'from_time',
                     xtype: 'timefield',
-                    format: 'H:i'
+                    format: 'H:i',
+                    value: '09:00'
                 }, {
                     fieldLabel: 'To Date',
                     name: 'to_date',
                     xtype: 'datefield',
-                    format: 'Y-m-d'
+                    format: 'Y-m-d',
+                    value: '2011-10-15'
                 }, {
                     fieldLabel: 'To Time',
                     name: 'to_time',
                     xtype: 'timefield',
-                    format: 'H:i'
+                    format: 'H:i',
+                    value: '09:40'
                 }
             ]
         }

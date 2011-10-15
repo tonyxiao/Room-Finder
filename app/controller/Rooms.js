@@ -6,7 +6,8 @@ Ext.define('RF.controller.Rooms', {
     refs: [
         {ref: 'roomsFilter', selector: 'roomsfilter' },
         {ref: 'roomsList',   selector: 'roomslist' },
-        {ref: 'roomView',  selector: 'roomview' }
+        {ref: 'roomView',  selector: 'roomview' },
+        {ref: 'calendar', selector: '#calendar' }
     ],
 
     init: function() {
@@ -24,7 +25,7 @@ Ext.define('RF.controller.Rooms', {
             '#filters button[text=Test]': {
                 click: function() {
                     values = (me.getRoomsFilter().getValues());
-                    
+                    me.filterRooms();
                 }
             }
         });
@@ -37,6 +38,9 @@ Ext.define('RF.controller.Rooms', {
     },
     showRoom: function(view, record) {
         this.getRoomView().bind(record);
+        bookings = record.data.bookings;
+        this.getCalendar().store.loadData(record.data.bookings);
+        console.log(this.getCalendar().store);
     },
     filterRooms: function() {
         var rooms = this.getRoomsStore(),
@@ -53,7 +57,30 @@ Ext.define('RF.controller.Rooms', {
         }
         if (!Ext.isEmpty(values.building))
             filters.push({ property: 'building', value: values.building, exactMatch: true });
-        if (!Ext.isEmpty(values))
+        if (!Ext.isEmpty(values.from_date)
+            && !Ext.isEmpty(values.from_time)
+            && !Ext.isEmpty(values.to_date)
+            && !Ext.isEmpty(values.to_time)) {
+            var from = Ext.Date.parse(values.from_date + "T" + values.from_time, 'c'),
+                to = Ext.Date.parse(values.to_date + "T" + values.to_time, 'c');
+//            console.log(from, to);
+            rooms.filterBy(function(record, id) {
+                var free = true;
+                Ext.Array.each(record.data.bookings, function(booking, i, bookings) {
+                    if (!Ext.isEmpty(booking)) {
+                        var start = Ext.Date.parse(booking.start, 'c'),
+                            end = Ext.Date.parse(booking.end, 'c');
+//                        console.log(start, end);
+//                        console.log(to.getTime() <= start.getTime());
+//                        console.log(from.getTime() >= end.getTime());
+                        if (!(to.getTime() <= start.getTime()
+                            || from.getTime() >= end.getTime()))
+                            free = false;
+                    }
+                });
+                return free;
+            });
+        }
         if (!Ext.isEmpty(filters))
             rooms.filter(filters);
     }
