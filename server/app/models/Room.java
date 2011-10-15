@@ -1,6 +1,10 @@
 package models;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 
 import play.db.jpa.Model;
 
@@ -21,6 +25,7 @@ public class Room extends Model {
 	
 	public int capacity;
 	
-	
+	@OneToMany(cascade=CascadeType.ALL, orphanRemoval=true, mappedBy="room")
+	public List<Booking> bookings;
 	
 }
