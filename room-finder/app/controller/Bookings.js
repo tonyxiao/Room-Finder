@@ -9,7 +9,7 @@ Ext.define('RF.controller.Bookings', {
     refs: [
         {ref: 'calendar', selector: '#calendar' },
 //        {ref: 'roomsList',   selector: 'roomslist' },
-//        {ref: 'roomView',  selector: 'roomview' }
+        {ref: 'roomView',  selector: 'roomview' }
     ],
 
     init: function() {
@@ -65,8 +65,8 @@ Ext.define('RF.controller.Bookings', {
                 }
             }
         });
+        
     },
     onLaunch: function() {
-
     }
 });

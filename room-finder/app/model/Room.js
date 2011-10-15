@@ -20,6 +20,6 @@ Ext.define('RF.model.Room', {
 //    hasMany: { model: 'RF.model.Booking', name: 'bookings' },
     proxy: {
         type: 'ajax',
-        url : 'http://localhost:9000/rest/rooms'
+        url : '/rest/rooms'
     }
 });

@@ -31,17 +31,19 @@ Ext.define('RF.view.room.Filter', {
             margin: 5,
             items: [
                 {
+                    id: 'buildingCombo',
                     itemId: 'building',
                     name: 'building',
                     xtype: 'combobox',
                     fieldLabel: 'Building Name',
-                    store: [
-                        'Friend',
-                        'CS',
-                        'East Pyne',
-                        'Nassau',
-                        'Lewis'
-                    ]
+                    store: []
+                }, {
+                    id: 'buildingTypeCombo',
+                    itemId: 'buildingType',
+                    name: 'building_type',
+                    xtype: 'combobox',
+                    fieldLabel: 'Building Type',
+                    store: ['Classroom', 'Seminar Room', 'Theatre', 'Lounge', 'Other']
                 }
             ]
         }, {

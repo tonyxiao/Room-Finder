@@ -38,6 +38,7 @@ Ext.define('RF.controller.Rooms', {
     },
     showRoom: function(view, record) {
         this.getRoomView().bind(record);
+        this.getCalendar().enable();
         this.getCalendar().store.room = record;
         this.getCalendar().store.loadData(record.data.bookings);
     },
@@ -50,15 +51,11 @@ Ext.define('RF.controller.Rooms', {
         if (!Ext.isEmpty(values.capacityMin) && !Ext.isEmpty(values.capacityMax)) {
             filters.push({
                 filterFn: function(record, id) {
-//                    return false;
                     var min = values.capacityMin,
                         max = values.capacityMax;
-                    console.log(min, max);
-                    console.log(record.data.capacity >= min && record.data.capacity <= max);
                     return record.data.capacity >= min && record.data.capacity <= max;
                 }
             });
-//            rooms.filterBy();
         }
 
         if (!Ext.isEmpty(values.building))
@@ -75,11 +72,8 @@ Ext.define('RF.controller.Rooms', {
                     var free = true;
                     Ext.Array.each(record.data.bookings, function(booking, i, bookings) {
                         if (!Ext.isEmpty(booking)) {
-                            var start = Ext.Date.parse(booking.start, 'c'),
-                                end = Ext.Date.parse(booking.end, 'c');
-    //                        console.log(start, end);
-    //                        console.log(to.getTime() <= start.getTime());
-    //                        console.log(from.getTime() >= end.getTime());
+                            var start = Ext.Date.parse(booking.start, 'c') || booking.get('start'),
+                                end = Ext.Date.parse(booking.end, 'c') || booking.get('end');
                             if (!(to.getTime() <= start.getTime()
                                 || from.getTime() >= end.getTime()))
                                 free = false;
@@ -91,5 +85,12 @@ Ext.define('RF.controller.Rooms', {
         }
         if (!Ext.isEmpty(filters))
             rooms.filter(filters);
+
+        var cal = this.getCalendar();
+        if (cal.store.indexOf(cal.store.room) == -1) {
+            this.getRoomView().resetView();
+            this.getRoomView().setActiveTab(0);
+            cal.store.room = null;
+        }
     }
 });

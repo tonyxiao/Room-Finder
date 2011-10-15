@@ -23,28 +23,36 @@ Ext.define('RF.view.room.View', {
                     border: false,
                     margin: '0 10 0 20',
                     width : 200,
-                    height: 308
+                    height: 308,
+                    html: '<img src="http://www.workforcenetwork.com/workforcefiles/uploads/Corner_Conference_Room.jpg" />'
                 },
                 {
                     id    : 'contentCt',
                     width : 500,
-                    border: false
+                    border: false,
+                    html: '<div class="name">Please Select a Room</div>' +
+                          '<div class="author">Capacity</div>' +
+                          '<div class="detail">Details</div>'
                 }
             ]
         }, {
             id: 'cal',
             itemId: 'calendar',
             title: 'Availability',
+            disabled: true,
             xtype: 'extensible.calendarpanel',
+            activeItem: 1,
             eventStore: Ext.create('RF.store.Bookings',  {
-                autoLoad: true,
                 proxy: {
                     type: 'rest',
-                    url: 'http://localhost:9000/rest/bookings'
+                    url: '/rest/bookings'
+                },
+                listeners: {
+                    beforeload: function(store, operation) {
+                        return false; // hack to get around te problem where viewchange cause store reload
+                    }
                 }
             }),
-            showMultiWeekView: false,
-            showMonthView: false,
             enableEditDetails: false
         }
     ],
@@ -69,6 +77,26 @@ Ext.define('RF.view.room.View', {
         imgTpl.overwrite(imgCt.el, record.data);
         contentTpl.overwrite(contentCt.el, record.data);
         
+        //update the layout of the contentTpl
+        contentCt.setHeight('auto');
+        this.doLayout();
+    },
+    resetView: function() {
+        var imgCt = Ext.getCmp('imgCt'),
+            contentCt = Ext.getCmp('contentCt');
+
+        var imgTpl = new Ext.XTemplate(
+            '<img src="http://www.workforcenetwork.com/workforcefiles/uploads/Corner_Conference_Room.jpg" />'
+        );
+
+        var contentTpl = new Ext.XTemplate(
+            '<div class="name">Please Select a Room</div>',
+            '<div class="author">Capacity</div>',
+            '<div class="detail">Details</div>'
+        );
+
+        imgTpl.overwrite(imgCt.el, []);
+        contentTpl.overwrite(contentCt.el, []);
         //update the layout of the contentTpl
         contentCt.setHeight('auto');
         this.doLayout();
