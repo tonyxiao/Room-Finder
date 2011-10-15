@@ -1,4 +1,10 @@
 Ext.define('RF.store.Bookings', {
     extend: 'Extensible.calendar.data.EventStore',
-    model: 'RF.model.Booking'
+    listeners: {
+        add: function(store, bookings) {
+            Ext.each(bookings, function(booking, i) {
+                booking.set('room_id', store.room.getId());
+            });
+        }
+    }
 });

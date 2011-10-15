@@ -1,6 +1,7 @@
 Ext.define('RF.view.room.Filter', {
     extend: 'Ext.form.Panel',
     alias: 'widget.roomsfilter',
+    autoScroll: true,
     buttons: [{
         text: 'Test'
     }],
@@ -12,16 +13,15 @@ Ext.define('RF.view.room.Filter', {
             margin: 5,
             items: [
                 {
-                    itemId: 'capacity',
-                    name: 'capacity',
-                    xtype: 'multislider',
-                    width: 200,
-                    values: [0, 500],
-                    increment: 5,
-                    minValue: 0,
-                    maxValue: 500,
-                    // this defaults to true, setting to false allows the thumbs to pass each other
-                    constrainThumbs: false
+                    name: 'capacityMin',
+                    fieldLabel: 'Min',
+                    xtype: 'numberfield',
+                    value: 0
+                }, {
+                    name: 'capacityMax',
+                    fieldLabel: 'Max',
+                    xtype: 'numberfield',
+                    value: 300
                 }
             ]
         }, {

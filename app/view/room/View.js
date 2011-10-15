@@ -36,7 +36,7 @@ Ext.define('RF.view.room.View', {
             itemId: 'calendar',
             title: 'Availability',
             xtype: 'extensible.calendarpanel',
-            eventStore: Ext.create('Extensible.calendar.data.EventStore',  {
+            eventStore: Ext.create('RF.store.Bookings',  {
                 autoLoad: true,
                 proxy: {
                     type: 'rest',
@@ -44,7 +44,8 @@ Ext.define('RF.view.room.View', {
                 }
             }),
             showMultiWeekView: false,
-            showMonthView: false
+            showMonthView: false,
+            enableEditDetails: false
         }
     ],
     

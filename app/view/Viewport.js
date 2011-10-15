@@ -23,6 +23,8 @@ Ext.define('RF.view.Viewport', {
                             xtype: 'roomsfilter',
                             title: 'Filters',
                             flex: 2
+//                            collapsed: true,
+//                            collapsible: true
                         }, {
                             region: 'center',
                             xtype: 'roomslist',
@@ -32,6 +34,8 @@ Ext.define('RF.view.Viewport', {
                             region: 'east',
                             xtype: 'roomview',
                             flex: 3
+//                            collapsed: true,
+//                            collapsible: true
                         }
                     ]
                 }
