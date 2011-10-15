@@ -40,7 +40,7 @@
           <file leaf-file-name="rooms.json" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/data/rooms.json">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="119" column="9" selection-start="3608" selection-end="3608" vertical-scroll-proportion="0.0">
+                <state line="116" column="40" selection-start="3522" selection-end="3524" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -58,7 +58,7 @@
           <file leaf-file-name="Bookings.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/controller/Bookings.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="52" column="33" selection-start="1893" selection-end="1893" vertical-scroll-proportion="0.0">
+                <state line="58" column="22" selection-start="2027" selection-end="2027" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -91,19 +91,19 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Rooms.js" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="Rooms.js" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/store/Rooms.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="1" column="29" selection-start="60" selection-end="60" vertical-scroll-proportion="0.0">
+                <state line="5" column="18" selection-start="158" selection-end="158" vertical-scroll-proportion="0.16011645">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="bookings.json" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="bookings.json" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/data/bookings.json">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="11" column="21" selection-start="249" selection-end="249" vertical-scroll-proportion="0.34229138">
+                <state line="8" column="6" selection-start="201" selection-end="201" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -116,7 +116,7 @@
           <file leaf-file-name="Room.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/model/Room.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="4" column="36" selection-start="172" selection-end="172" vertical-scroll-proportion="0.0">
+                <state line="22" column="47" selection-start="863" selection-end="863" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -140,10 +140,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="View.js" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="View.js" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/view/room/View.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="63" column="43" selection-start="1790" selection-end="1790" vertical-scroll-proportion="0.0">
+                <state line="42" column="61" selection-start="1274" selection-end="1274" vertical-scroll-proportion="0.61959654">
                   <folding />
                 </state>
               </provider>
@@ -167,10 +167,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Booking.js" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="Booking.js" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/model/Booking.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="8" column="26" selection-start="378" selection-end="378" vertical-scroll-proportion="0.24893919">
+                <state line="20" column="14" selection-start="821" selection-end="856" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -207,16 +207,16 @@
         <option value="$PROJECT_DIR$/app/view/room/List.js" />
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/app/data/rooms.json" />
-        <option value="$PROJECT_DIR$/app/model/Booking.js" />
-        <option value="$PROJECT_DIR$/app/model/Room.js" />
         <option value="$PROJECT_DIR$/app/store/Bookings.js" />
-        <option value="$PROJECT_DIR$/app/view/room/View.js" />
         <option value="$PROJECT_DIR$/app/controller/Bookings.js" />
         <option value="$PROJECT_DIR$/app/view/Viewport.js" />
         <option value="$PROJECT_DIR$/index-dev.html" />
         <option value="$PROJECT_DIR$/app/controller/Rooms.js" />
         <option value="$PROJECT_DIR$/app/view/room/Filter.js" />
         <option value="$PROJECT_DIR$/app/data/bookings.json" />
+        <option value="$PROJECT_DIR$/app/model/Booking.js" />
+        <option value="$PROJECT_DIR$/app/model/Room.js" />
+        <option value="$PROJECT_DIR$/app/view/room/View.js" />
       </list>
     </option>
   </component>
@@ -470,6 +470,17 @@
     <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
   </component>
+  <component name="PublishConfig">
+    <servers>
+      <server id="5e3269c3-72a6-4810-9ff1-d0f1aa129e1c">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </server>
+    </servers>
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/data" />
@@ -517,7 +528,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24946082" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20560747" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20560747" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -594,27 +605,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/store/Bookings.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="5" selection-start="288" selection-end="288" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controller/Bookings.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="33" selection-start="1893" selection-end="1893" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/room/View.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="43" selection-start="1790" selection-end="1790" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index-debug.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="50" selection-start="481" selection-end="481" vertical-scroll-proportion="-2.7160494">
@@ -625,13 +615,6 @@
     <entry file="file://$PROJECT_DIR$/index-dev.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="48" selection-start="451" selection-end="451" vertical-scroll-proportion="-9.307693">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/store/Rooms.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="29" selection-start="60" selection-end="60" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -650,13 +633,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/model/Room.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="36" selection-start="172" selection-end="172" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controller/Rooms.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="64" column="45" selection-start="2172" selection-end="2172" vertical-scroll-proportion="0.0">
@@ -664,23 +640,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/model/Booking.js">
+    <entry file="file://$PROJECT_DIR$/app/data/bookings.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="26" selection-start="378" selection-end="378" vertical-scroll-proportion="0.24893919">
+        <state line="8" column="6" selection-start="201" selection-end="201" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/data/rooms.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="119" column="9" selection-start="3608" selection-end="3608" vertical-scroll-proportion="0.0">
+        <state line="116" column="40" selection-start="3522" selection-end="3524" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/data/bookings.json">
+    <entry file="file://$PROJECT_DIR$/app/controller/Bookings.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="21" selection-start="249" selection-end="249" vertical-scroll-proportion="0.34229138">
+        <state line="58" column="22" selection-start="2027" selection-end="2027" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/store/Bookings.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="5" selection-start="288" selection-end="288" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/model/Booking.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="14" selection-start="821" selection-end="856" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/model/Room.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="47" selection-start="863" selection-end="863" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/room/View.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="61" selection-start="1274" selection-end="1274" vertical-scroll-proportion="0.61959654">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/store/Rooms.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="18" selection-start="158" selection-end="158" vertical-scroll-proportion="0.16011645">
           <folding />
         </state>
       </provider>

@@ -1,10 +1,10 @@
 syntax: glob
 
 resources/sass/.sass-cache
-server/tmp
-server/.classpath
-server/db
-server/.settings
-server/.project
+tmp
+.classpath
+db
+.settings
+.project
 .hgignore.swp
-server/eclipse
+eclipse

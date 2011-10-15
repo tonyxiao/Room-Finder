@@ -10,9 +10,11 @@ GET     /favicon.ico                            404
 
 # Map static resources from the /app/public folder to the /public path
 GET     /public/                                staticDir:public
+GET     /room-finder/                                staticDir:room-finder
 
 # RESTful interface                                       
 GET     /rest/{controller}/?                              rest.{controller}.index
+OPTIONS /rest/{controller}/?                              rest.{controller}.index
 GET     /rest/{controller}/{<[0-9]+>id}                   rest.{controller}.view
 POST    /rest/{controller}/?                              rest.{controller}.create
 PUT     /rest/{controller}/{<[0-9]+>id}                   rest.{controller}.edit

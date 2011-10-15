@@ -18,6 +18,6 @@ Ext.define('RF.model.Booking', {
     belongsTo: 'RF.model.Room',
     proxy: {
         type: 'rest',
-        url: 'app/data/bookings.json'
+        url: 'http://localhost:9000/rest/bookings'
     }
 });
