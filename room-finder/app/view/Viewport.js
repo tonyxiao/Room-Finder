@@ -23,7 +23,7 @@ Ext.define('RF.view.Viewport', {
                             xtype: 'roomsfilter',
                             title: 'Filters',
                             flex: 2,
-                            maxWidth: 300,
+                            maxWidth: 320,
                             collapsible: true,
                             split: true
                         }, {

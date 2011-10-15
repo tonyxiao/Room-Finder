@@ -4,17 +4,22 @@ Ext.define('RF.view.room.List', {
     store: 'Rooms',
     columns: [
         {
-            text: 'Room #',
-            dataIndex: 'room_number'
-        }, {
             text: 'Building',
             dataIndex: 'building'
         }, {
+            text: 'Room #',
+            dataIndex: 'room_number'
+        }, {
+            text: 'Room Type',
+            dataIndex: 'room_type'
+        }, {
             text: 'Admin Name',
-            dataIndex: 'admin'
+            dataIndex: 'admin',
+            hidden: true
         }, {
             text: 'Capacity',
-            dataIndex: 'capacity'
+            dataIndex: 'capacity',
+            width: 70
         }
     ]
 });

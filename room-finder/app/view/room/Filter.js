@@ -2,9 +2,6 @@ Ext.define('RF.view.room.Filter', {
     extend: 'Ext.form.Panel',
     alias: 'widget.roomsfilter',
     autoScroll: true,
-    buttons: [{
-        text: 'Test'
-    }],
     items: [
         {
             xtype: 'fieldset',
@@ -26,7 +23,7 @@ Ext.define('RF.view.room.Filter', {
             ]
         }, {
             xtype: 'fieldset',
-            title: 'Building',
+            title: 'Building & Room',
             collapsible: true,
             margin: 5,
             items: [
@@ -38,11 +35,11 @@ Ext.define('RF.view.room.Filter', {
                     fieldLabel: 'Building Name',
                     store: []
                 }, {
-                    id: 'buildingTypeCombo',
-                    itemId: 'buildingType',
-                    name: 'building_type',
+                    id: 'roomTypeCombo',
+                    itemId: 'roomType',
+                    name: 'room_type',
                     xtype: 'combobox',
-                    fieldLabel: 'Building Type',
+                    fieldLabel: 'Room Type',
                     store: ['Classroom', 'Seminar Room', 'Theatre', 'Lounge', 'Other']
                 }
             ]
@@ -74,31 +71,40 @@ Ext.define('RF.view.room.Filter', {
             items: [
                 {
                     fieldLabel: 'From Date',
+                    id: 'from_date',
                     name: 'from_date',
                     xtype: 'datefield',
                     format: 'Y-m-d',
-                    value: '2011-10-15',
-                    validator: function(val) {
-                        return !Ext.isEmpty(val);
-                    }
+                    value: '2011-10-15'
                 }, {
                     fieldLabel: 'From Time',
+                    id: 'from_time',
                     name: 'from_time',
                     xtype: 'timefield',
                     format: 'H:i',
                     value: '09:00'
                 }, {
                     fieldLabel: 'To Date',
+                    id: 'to_date',
                     name: 'to_date',
                     xtype: 'datefield',
                     format: 'Y-m-d',
                     value: '2011-10-15'
                 }, {
                     fieldLabel: 'To Time',
+                    id: 'to_time',
                     name: 'to_time',
                     xtype: 'timefield',
                     format: 'H:i',
                     value: '09:40'
+                }, {
+                    xtype: 'button',
+                    text: 'Reset Filter',
+                    margin: 5
+                }, {
+                    xtype: 'button',
+                    text: 'Filter by Availability',
+                    margin: 5
                 }
             ]
         }

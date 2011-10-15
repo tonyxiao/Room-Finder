@@ -15,6 +15,8 @@ public class Room extends Model {
 	
 	public String building;
 	
+	public String room_type;
+	
 	public String image;
 	
 	public String admin;

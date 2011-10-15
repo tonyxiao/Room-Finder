@@ -6,8 +6,7 @@ Ext.define('RF.model.Room', {
         {name: 'building',     type: 'string'},
         {name: 'image',        type: 'string'},
         {name: 'admin',        type: 'string'},
-        {name: 'day_start',    type: 'string'},
-        {name: 'day_end',      type: 'string'},
+        {name: 'room_type',    type: 'string'},
         {name: 'capacity',     type: 'int'},
         'bookings'
     ],

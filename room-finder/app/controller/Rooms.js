@@ -22,9 +22,15 @@ Ext.define('RF.controller.Rooms', {
             '#filters [name=building]': {
                 change: me.filterRooms
             },
-            '#filters button[text=Test]': {
+            '#filters button[text="Filter by Availability"]': {
+                click: me.filterRooms
+            },
+            '#filters button[text="Reset Filter"]': {
                 click: function() {
-                    values = (me.getRoomsFilter().getValues());
+                    Ext.getCmp('from_date').setValue('');
+                    Ext.getCmp('from_time').setValue('');
+                    Ext.getCmp('to_date').setValue('');
+                    Ext.getCmp('to_time').setValue('');
                     me.filterRooms();
                 }
             }
