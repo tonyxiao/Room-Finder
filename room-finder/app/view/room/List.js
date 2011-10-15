@@ -2,6 +2,11 @@ Ext.define('RF.view.room.List', {
     extend: 'Ext.grid.Panel',
     alias: 'widget.roomslist',
     store: 'Rooms',
+    tbar: [{
+        text: 'Add New Room',
+        iconCls: 'icon-add',
+        action: 'add'
+    }],
     columns: [
         {
             text: 'Building',

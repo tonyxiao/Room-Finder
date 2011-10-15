@@ -8,7 +8,8 @@ Ext.define('RF.model.Room', {
         {name: 'admin',        type: 'string'},
         {name: 'room_type',    type: 'string'},
         {name: 'capacity',     type: 'int'},
-        'bookings'
+        {name: 'description',  type: 'string'},
+        {name: 'bookings',     persist: false}
     ],
     validations: [
         {type: 'presence',  field: 'first_name'},
@@ -18,7 +19,7 @@ Ext.define('RF.model.Room', {
     ],
 //    hasMany: { model: 'RF.model.Booking', name: 'bookings' },
     proxy: {
-        type: 'ajax',
+        type: 'rest',
         url : '/rest/rooms'
     }
 });

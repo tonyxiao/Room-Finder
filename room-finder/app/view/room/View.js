@@ -2,7 +2,8 @@ Ext.define('RF.view.room.View', {
     alias: 'widget.roomview',
     extend: 'Ext.tab.Panel',
     requires: [
-        'Extensible.calendar.CalendarPanel'
+        'Extensible.calendar.CalendarPanel',
+        'RF.view.room.Form'
     ],
     items: [
         {
@@ -54,6 +55,10 @@ Ext.define('RF.view.room.View', {
                 }
             }),
             enableEditDetails: false
+        }, {
+            xtype: 'roomform',
+            title: 'Edit Room (Admin only)',
+            disabled: true
         }
     ],
     
@@ -70,8 +75,8 @@ Ext.define('RF.view.room.View', {
         
         var contentTpl = new Ext.XTemplate(
             '<div class="name">{building} <span>{room_number}</span></div>',
-            '<div class="author">Capacity {capacity}</div>',
-            '<div class="detail">Details: {admin}</div>'
+            '<div class="author">Room Type: {room_type}</div>',
+            '<div class="detail">Admin: {admin} <br />Description: {description}</div>'
         );
         
         imgTpl.overwrite(imgCt.el, record.data);
@@ -91,8 +96,8 @@ Ext.define('RF.view.room.View', {
 
         var contentTpl = new Ext.XTemplate(
             '<div class="name">Please Select a Room</div>',
-            '<div class="author">Capacity</div>',
-            '<div class="detail">Details</div>'
+            '<div class="author"></div>',
+            '<div class="detail"></div>'
         );
 
         imgTpl.overwrite(imgCt.el, []);

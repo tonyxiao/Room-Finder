@@ -6,6 +6,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 
+import play.db.jpa.JPA;
 import play.db.jpa.Model;
 
 @Entity
@@ -21,13 +22,17 @@ public class Room extends Model {
 	
 	public String admin;
 	
-	public String day_start;
-	
-	public String day_end;
+	public String description;
 	
 	public int capacity;
 	
-	@OneToMany(cascade=CascadeType.ALL, orphanRemoval=true, mappedBy="room")
+	@OneToMany(cascade=CascadeType.ALL, mappedBy="room")
 	public List<Booking> bookings;
 	
+	public Room delete() {
+    	JPA.em().createNativeQuery("Delete from Booking where room_id = :id")
+    	.setParameter("id", this).executeUpdate();
+		return super.delete();
+
+	}
 }

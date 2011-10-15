@@ -40,7 +40,7 @@ Ext.define('RF.view.room.Filter', {
                     name: 'room_type',
                     xtype: 'combobox',
                     fieldLabel: 'Room Type',
-                    store: ['Classroom', 'Seminar Room', 'Theatre', 'Lounge', 'Other']
+                    store: []
                 }
             ]
         }, {

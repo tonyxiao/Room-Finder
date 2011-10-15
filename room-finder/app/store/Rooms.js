@@ -14,5 +14,10 @@ Ext.define('RF.store.Rooms', {
             buildings.push([building]);
         });
         Ext.getCmp('buildingCombo').store.loadData(buildings);
+        var types = [];
+        Ext.each(store.collect('room_type', false, true), function(type) {
+            types.push([type]);
+        });
+        Ext.getCmp('roomTypeCombo').store.loadData(types);
     }
 });

@@ -186,3 +186,19 @@ $review-background-color: lighten($highlight-background-color, 20);
     }
 }
 
+/* Just some button icons */
+.icon-user {
+    background-image: url(../images/user.png) !important;
+}
+
+.icon-add {
+    background-image: url(../images/add.png) !important;
+}
+
+.icon-delete {
+    background-image: url(../images/delete.png) !important;
+}
+
+.x-action-col-icon {
+    cursor: pointer;
+}

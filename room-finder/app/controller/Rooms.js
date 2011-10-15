@@ -7,7 +7,8 @@ Ext.define('RF.controller.Rooms', {
         {ref: 'roomsFilter', selector: 'roomsfilter' },
         {ref: 'roomsList',   selector: 'roomslist' },
         {ref: 'roomView',  selector: 'roomview' },
-        {ref: 'calendar', selector: '#calendar' }
+        {ref: 'calendar', selector: '#calendar' },
+        {ref: 'roomForm', selector: 'roomview roomform' }
     ],
 
     init: function() {
@@ -15,6 +16,28 @@ Ext.define('RF.controller.Rooms', {
         me.control({
             'roomslist': {
                 itemclick: me.showRoom
+            },
+            'roomslist button[action=add]': {
+                click: function() {
+                    var  win = Ext.create('Ext.window.Window', {
+                        title: 'Create New Room',
+                        height: 450,
+                        width: 600,
+                        layout: 'fit',
+                        items: { 
+                            xtype: 'roomform'
+                        }
+                    }).show();
+                    win.down('button[text=Delete]').hide();
+                    win.down('button[text=Save]').on('click', function() {
+                        var form = win.child('roomform').getForm();
+                        if (form.isValid()) {
+                            me.getRoomsStore().add(form.getValues());
+                            win.destroy();
+                        }
+
+                    });
+                }
             },
             '#filters numberfield': {
                 change: me.filterRooms
@@ -33,6 +56,28 @@ Ext.define('RF.controller.Rooms', {
                     Ext.getCmp('to_time').setValue('');
                     me.filterRooms();
                 }
+            },
+            'roomview roomform button[text=Save]': {
+                click: function() {
+                    var form = me.getRoomForm().getForm();
+                    console.log(form.isValid());
+                    console.log(form.getRecord());
+                    console.log(form.getValues());
+                    form.getRecord().set(form.getValues());
+//                    if (form.isValid()) {
+//                        form.updateRecord(form.getRecord());
+//                    }
+                }
+            },
+            'roomview roomform button[text=Delete]': {
+                click: function() {
+                    var form = me.getRoomForm().getForm(),
+                        record = form.getRecord();
+                    if (record != null) {
+                        me.getRoomsStore().remove(record);
+                        me.resetRoomView();
+                    }
+                }
             }
         });
     },
@@ -42,11 +87,18 @@ Ext.define('RF.controller.Rooms', {
 //            console.log(room.data);
 //        })
     },
+    resetRoomView: function() {
+        this.getRoomView().setActiveTab(0);
+        this.getCalendar().disable();
+        this.getRoomForm().disable();
+    },
     showRoom: function(view, record) {
         this.getRoomView().bind(record);
+        this.getRoomForm().enable();
         this.getCalendar().enable();
         this.getCalendar().store.room = record;
         this.getCalendar().store.loadData(record.data.bookings);
+        this.getRoomForm().loadRecord(record);
     },
     filterRooms: function() {
         var rooms = this.getRoomsStore(),
